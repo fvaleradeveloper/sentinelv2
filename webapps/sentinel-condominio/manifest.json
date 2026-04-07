@@ -1,0 +1,10 @@
+{
+  "slug": "sentinel-condominio",
+  "nombre": "Sentinel Condominio",
+  "descripcion": "Gestión integral de condominios residenciales: unidades, personal, finanzas, recibos, nómina y más.",
+  "icono": "🏢",
+  "color": "#2563eb",
+  "activo": true,
+  "ruta": "/sentinel-condominio/dashboard",
+  "version": "1.0.0"
+}

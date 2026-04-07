@@ -1,0 +1,10 @@
+{
+  "slug": "sentinel-contabilidad",
+  "nombre": "Sentinel Contabilidad",
+  "descripcion": "Contabilidad y finanzas para empresas.",
+  "icono": "ðŸ’°",
+  "color": "#ea580c",
+  "activo": false,
+  "ruta": "/sentinel-contabilidad",
+  "version": "0.1.0"
+}

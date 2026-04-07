@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+
+# Misc
+.DS_Store
+*.pem
+Thumbs.db
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files — NUNCA subir al repo
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Scripts de fix (temporales)
+fix-bom.js
+fix-encoding.js
+fix-mojibake.js
+fix-final.js
+script.ps1
+sentinel-part1-infraestructura-v2.ps1
+sentinel-part2-componentes-v2.ps1
+sentinel-part3-forms-charts-v2.ps1
+sentinel-part4-paginas-v2.ps1
+
+# IDEs
+.vscode/
+.idea/

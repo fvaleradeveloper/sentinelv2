@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Tema Default - Azul */
+  --color-primary: #2563eb;
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1d4ed8;
+  --color-accent: #f59e0b;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f8fafc;
+  --color-on-primary: #ffffff;
+  --color-on-surface: #0f172a;
+  --color-on-surface-muted: #64748b;
+  --color-border: #e2e8f0;
+}
+
+.dark {
+  --color-surface: #0f172a;
+  --color-surface-alt: #1e293b;
+  --color-on-surface: #f1f5f9;
+  --color-on-surface-muted: #94a3b8;
+  --color-border: #334155;
+}
+
+/* Tema Esmeralda */
+[data-theme="esmeralda"] {
+  --color-primary: #059669;
+  --color-primary-light: #10b981;
+  --color-primary-dark: #047857;
+  --color-accent: #f97316;
+}
+
+/* Tema Violeta */
+[data-theme="violeta"] {
+  --color-primary: #7c3aed;
+  --color-primary-light: #8b5cf6;
+  --color-primary-dark: #6d28d9;
+  --color-accent: #ec4899;
+}
+
+/* Tema Rojo */
+[data-theme="rojo"] {
+  --color-primary: #dc2626;
+  --color-primary-light: #ef4444;
+  --color-primary-dark: #b91c1c;
+  --color-accent: #eab308;
+}
+
+/* Tema Oceano */
+[data-theme="oceano"] {
+  --color-primary: #0891b2;
+  --color-primary-light: #06b6d4;
+  --color-primary-dark: #0e7490;
+  --color-accent: #a855f7;
+}
+
+/* Tema Naranja */
+[data-theme="naranja"] {
+  --color-primary: #ea580c;
+  --color-primary-light: #f97316;
+  --color-primary-dark: #c2410c;
+  --color-accent: #0ea5e9;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans antialiased;
+  }
+}
+
+@layer components {
+  .skeleton {
+    @apply animate-pulse bg-surface-alt rounded;
+  }
+}

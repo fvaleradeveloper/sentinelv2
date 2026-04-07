@@ -1,0 +1,10 @@
+{
+  "slug": "sentinel-administracion",
+  "nombre": "Sentinel Administración",
+  "descripcion": "Administración empresarial integral.",
+  "icono": "📋",
+  "color": "#7c3aed",
+  "activo": false,
+  "ruta": "/sentinel-administracion",
+  "version": "0.1.0"
+}

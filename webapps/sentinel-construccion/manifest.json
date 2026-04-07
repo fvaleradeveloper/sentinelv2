@@ -1,0 +1,10 @@
+{
+  "slug": "sentinel-construccion",
+  "nombre": "Sentinel Construcción",
+  "descripcion": "Gestión de proyectos de construcción.",
+  "icono": "🏗️",
+  "color": "#0891b2",
+  "activo": false,
+  "ruta": "/sentinel-construccion",
+  "version": "0.1.0"
+}

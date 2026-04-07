@@ -1,0 +1,10 @@
+{
+  "slug": "sentinel-vigilancia",
+  "nombre": "Sentinel Vigilancia",
+  "descripcion": "Control y monitoreo de seguridad para condominios y empresas.",
+  "icono": "ðŸ›¡ï¸",
+  "color": "#059669",
+  "activo": false,
+  "ruta": "/sentinel-vigilancia",
+  "version": "0.1.0"
+}
