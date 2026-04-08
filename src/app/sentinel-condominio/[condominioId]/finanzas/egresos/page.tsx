@@ -73,7 +73,7 @@ export default function EgresosPage() {
 
       <Table
         columnas={columnas}
-        datos={egresos as unknown as Record<string, unknown>[]}
+        datos={egresos}
         keyExtractor={(m) => String(m.id)}
         cargando={isLoading}
         vacio="No hay egresos registrados"

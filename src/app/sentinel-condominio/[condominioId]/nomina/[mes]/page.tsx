@@ -41,7 +41,7 @@ export default function NominaDetallePage() {
       <p className="text-sm text-on-surface-muted mb-6">{nominas.length} empleados</p>
       <Table
         columnas={columnas}
-        datos={nominas as unknown as Record<string, unknown>[]}
+        datos={nominas}
         keyExtractor={(n) => String(n.id)}
         cargando={isLoading}
         vacio="No hay registros de nómina para este mes"

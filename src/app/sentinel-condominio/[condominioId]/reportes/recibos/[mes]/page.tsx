@@ -49,7 +49,7 @@ export default function RecibosMesPage() {
       <p className="text-sm text-on-surface-muted mb-6">{recibos.length} recibos generados</p>
       <Table
         columnas={columnas}
-        datos={recibos as unknown as Record<string, unknown>[]}
+        datos={recibos}
         keyExtractor={(r) => String(r.id)}
         cargando={isLoading}
         vacio="No hay recibos para este mes"

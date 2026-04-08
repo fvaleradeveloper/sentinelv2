@@ -80,7 +80,7 @@ export default function PersonalPage() {
 
       <Table
         columnas={columnas}
-        datos={personal as unknown as Record<string, unknown>[]}
+        datos={personal}
         keyExtractor={(p) => String(p.id)}
         cargando={isLoading}
         vacio="No hay personal registrado"

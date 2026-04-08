@@ -2,15 +2,18 @@
 
 import { ReactNode } from 'react';
 
-interface Columna<T> {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+interface Columna<T = any> {
   key: string;
   titulo: string;
   render?: (item: T) => ReactNode;
   className?: string;
 }
 
-interface TableProps<T> {
-  columnas: Columna<T>[];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+interface TableProps<T = any> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  columnas: Columna<any>[];
   datos: T[];
   keyExtractor: (item: T) => string;
   vacio?: string;
@@ -18,7 +21,8 @@ interface TableProps<T> {
   onClickFila?: (item: T) => void;
 }
 
-export default function Table<T extends Record<string, unknown>>({
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function Table<T = any>({
   columnas,
   datos,
   keyExtractor,
@@ -69,7 +73,10 @@ export default function Table<T extends Record<string, unknown>>({
                 >
                   {columnas.map((col) => (
                     <td key={col.key} className={`px-4 py-3 text-sm text-on-surface ${col.className || ''}`}>
-                      {col.render ? col.render(item) : String(item[col.key] ?? '')}
+                      {col.render
+                        ? col.render(item)
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        : String((item as any)[col.key] ?? '')}
                     </td>
                   ))}
                 </tr>

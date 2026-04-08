@@ -77,7 +77,7 @@ export default function UnidadesPage() {
 
       <Table
         columnas={columnas}
-        datos={unidades as unknown as Record<string, unknown>[]}
+        datos={unidades}
         keyExtractor={(u) => String(u.id)}
         cargando={isLoading}
         vacio="No hay unidades registradas"

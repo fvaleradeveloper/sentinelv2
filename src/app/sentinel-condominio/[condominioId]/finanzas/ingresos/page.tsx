@@ -73,7 +73,7 @@ export default function IngresosPage() {
 
       <Table
         columnas={columnas}
-        datos={ingresos as unknown as Record<string, unknown>[]}
+        datos={ingresos}
         keyExtractor={(m) => String(m.id)}
         cargando={isLoading}
         vacio="No hay ingresos registrados"
