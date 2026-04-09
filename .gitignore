@@ -52,3 +52,6 @@ sentinel-part4-paginas-v2.ps1
 # IDEs
 .vscode/
 .idea/
+
+.vercel
+.env*.local

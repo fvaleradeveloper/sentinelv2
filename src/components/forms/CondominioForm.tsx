@@ -15,7 +15,15 @@ interface CondominioFormProps {
 export default function CondominioForm({ datosIniciales, onSubmit, cargando }: CondominioFormProps) {
   const { register, handleSubmit, formState: { errors } } = useForm<CondominioInput>({
     resolver: zodResolver(condominioSchema),
-    defaultValues: datosIniciales,
+    defaultValues: {
+      nombre: '',
+      direccion: '',
+      rif: '',
+      fondo_reserva_porcentaje: 10,
+      simbolo_moneda: 'S/',
+      ubicacion: 'Peru',
+      ...datosIniciales,
+    },
   });
 
   return (

@@ -17,8 +17,8 @@ export const registroSchema = z.object({
 
 export const condominioSchema = z.object({
   nombre: z.string().min(1, 'El nombre es obligatorio').max(100),
-  direccion: z.string().optional(),
-  rif: z.string().optional(),
+  direccion: z.string().optional().nullable(),
+  rif: z.string().optional().nullable(),
   fondo_reserva_porcentaje: z.number().min(0).max(100).default(10),
   simbolo_moneda: z.string().default('S/'),
   ubicacion: z.string().default('Peru'),
