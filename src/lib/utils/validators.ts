@@ -19,9 +19,9 @@ export const condominioSchema = z.object({
   nombre: z.string().min(1, 'El nombre es obligatorio').max(100),
   direccion: z.string().optional().nullable(),
   rif: z.string().optional().nullable(),
-  fondo_reserva_porcentaje: z.number().min(0).max(100).default(10),
-  simbolo_moneda: z.string().default('S/'),
-  ubicacion: z.string().default('Peru'),
+  fondo_reserva_porcentaje: z.number().min(0).max(100).optional().default(10),
+  simbolo_moneda: z.string().optional().default('S/'),
+  ubicacion: z.string().optional().default('Peru'),
 });
 
 export const unidadSchema = z.object({
@@ -71,9 +71,9 @@ export const mensajeSchema = z.object({
 
 export type LoginInput = z.infer<typeof loginSchema>;
 export type RegistroInput = z.infer<typeof registroSchema>;
-export type CondominioInput = z.infer<typeof condominioSchema>;
-export type UnidadInput = z.infer<typeof unidadSchema>;
-export type PersonalInput = z.infer<typeof personalSchema>;
-export type MovimientoInput = z.infer<typeof movimientoSchema>;
-export type PrestamoInput = z.infer<typeof prestamoSchema>;
-export type MensajeInput = z.infer<typeof mensajeSchema>;
+export type CondominioInput = z.output<typeof condominioSchema>;
+export type UnidadInput = z.output<typeof unidadSchema>;
+export type PersonalInput = z.output<typeof personalSchema>;
+export type MovimientoInput = z.output<typeof movimientoSchema>;
+export type PrestamoInput = z.output<typeof prestamoSchema>;
+export type MensajeInput = z.output<typeof mensajeSchema>;

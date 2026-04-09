@@ -16,13 +16,12 @@ export default function CondominioForm({ datosIniciales, onSubmit, cargando }: C
   const { register, handleSubmit, formState: { errors } } = useForm<CondominioInput>({
     resolver: zodResolver(condominioSchema),
     defaultValues: {
-      nombre: '',
-      direccion: '',
-      rif: '',
-      fondo_reserva_porcentaje: 10,
-      simbolo_moneda: 'S/',
-      ubicacion: 'Peru',
-      ...datosIniciales,
+      nombre: datosIniciales?.nombre ?? '',
+      direccion: datosIniciales?.direccion ?? '',
+      rif: datosIniciales?.rif ?? '',
+      fondo_reserva_porcentaje: datosIniciales?.fondo_reserva_porcentaje ?? 10,
+      simbolo_moneda: datosIniciales?.simbolo_moneda ?? 'S/',
+      ubicacion: datosIniciales?.ubicacion ?? 'Peru',
     },
   });
 
