@@ -56,7 +56,10 @@ export default function TendenciaChart({ datos, titulo, color = '#2563eb', simbo
       legend: { display: false },
       tooltip: {
         callbacks: {
-          label: (ctx: { parsed: { y: number } }) => `${simboloMoneda} ${ctx.parsed.y.toFixed(2)}`,
+          label: (context: any) => {
+            const value = context.parsed.y !== null ? context.parsed.y : 0;
+            return `${simboloMoneda} ${value.toFixed(2)}`;
+          },
         },
       },
     },

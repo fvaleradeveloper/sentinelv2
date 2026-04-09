@@ -52,7 +52,10 @@ export default function DeudasChart({ datos, simboloMoneda = 'S/' }: DeudasChart
       legend: { display: false },
       tooltip: {
         callbacks: {
-          label: (ctx: { parsed: { x: number } }) => `${simboloMoneda} ${ctx.parsed.x.toFixed(2)}`,
+          label: (context: any) => {
+            const value = context.parsed.x !== null ? context.parsed.x : 0;
+            return `${simboloMoneda} ${value.toFixed(2)}`;
+          },
         },
       },
     },

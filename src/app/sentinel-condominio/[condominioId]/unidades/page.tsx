@@ -36,15 +36,26 @@ export default function UnidadesPage() {
 
   const crearMutation = useMutation({
     mutationFn: async (datos: UnidadInput) => {
-      const { error } = await supabase.from('unidades').insert({ ...datos, condominio_id: condominioId });
-      if (error) throw error;
+      const { data, error } = await supabase
+        .from('unidades')
+        .insert({ ...datos, condominio_id: condominioId })
+        .select()
+        .single();
+      if (error) {
+        console.error('Error de Supabase:', error);
+        throw new Error(`Error de base de datos: ${error.message}`);
+      }
+      return data;
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['unidades', condominioId] });
       toast.success('Unidad creada exitosamente');
       setModalAbierto(false);
     },
-    onError: () => toast.error('Error al crear la unidad'),
+    onError: (error) => {
+      console.error('Error al crear unidad:', error);
+      toast.error(`Error al crear la unidad: ${error.message}`);
+    },
   });
 
   const columnas = [

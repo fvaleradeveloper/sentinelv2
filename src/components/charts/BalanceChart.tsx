@@ -60,8 +60,11 @@ export default function BalanceChart({ datos, simboloMoneda = 'S/' }: BalanceCha
       legend: { position: 'top' as const },
       tooltip: {
         callbacks: {
-          label: (ctx: { dataset: { label: string }; parsed: { y: number } }) =>
-            `${ctx.dataset.label}: ${simboloMoneda} ${ctx.parsed.y.toFixed(2)}`,
+          label: (context: any) => {
+            const label = context.dataset.label || '';
+            const value = context.parsed.y !== null ? context.parsed.y : 0;
+            return `${label}: ${simboloMoneda} ${value.toFixed(2)}`;
+          },
         },
       },
     },
