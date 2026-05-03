@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { condominioSchema, type CondominioInput } from '@/lib/utils/validators';
 import Input from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
+import { z } from 'zod';
 
 interface CondominioFormProps {
   datosIniciales?: Partial<CondominioInput>;
@@ -13,7 +14,7 @@ interface CondominioFormProps {
 }
 
 export default function CondominioForm({ datosIniciales, onSubmit, cargando }: CondominioFormProps) {
-  const { register, handleSubmit, formState: { errors } } = useForm<CondominioInput>({
+  const { register, handleSubmit, formState: { errors } } = useForm<z.infer<typeof condominioSchema>>({
     resolver: zodResolver(condominioSchema),
     defaultValues: {
       nombre: datosIniciales?.nombre ?? '',

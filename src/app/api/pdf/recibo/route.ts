@@ -41,7 +41,8 @@ export async function POST(request: NextRequest) {
         'Content-Disposition': `attachment; filename=recibo-${unidad}-${mes}.pdf`,
       },
     });
-  } catch {
+  } catch (error) {
+    console.error('[API PDF Recibo] Error interno:', error);
     return NextResponse.json({ error: 'Error al generar el PDF' }, { status: 500 });
   }
 }
